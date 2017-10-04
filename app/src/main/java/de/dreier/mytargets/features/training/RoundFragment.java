@@ -135,7 +135,7 @@ public class RoundFragment extends EditableListFragment<End> {
     @Override
     protected LoaderUICallback onLoad(Bundle args) {
         round = Round.get(roundId);
-        final List<End> ends = round.getEnds();
+        final List<End> ends = round.getEnds(); //FIXME how!?
         final boolean showFab = round.maxEndCount == null || ends.size() < round.maxEndCount;
 
         return () -> {
@@ -209,6 +209,7 @@ public class RoundFragment extends EditableListFragment<End> {
 
         @Override
         public void bindItem() {
+            binding.imageIndicator.setVisibility(item.getImages().isEmpty() ? View.INVISIBLE : View.VISIBLE);
             binding.shoots.setShots(round.getTarget(), item.getShots());
             binding.end.setText(getString(R.string.passe_n, (item.index + 1)));
         }

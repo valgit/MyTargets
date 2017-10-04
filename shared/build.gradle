@@ -15,6 +15,7 @@
 
 apply plugin: 'com.android.library'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'jacoco-android'
 
 android {
     compileOptions {
@@ -27,7 +28,7 @@ android {
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 26
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
 }

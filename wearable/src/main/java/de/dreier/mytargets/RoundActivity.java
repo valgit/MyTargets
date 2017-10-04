@@ -128,14 +128,14 @@ public class RoundActivity extends WearableActivity {
         binding.drawerLayout.setBackgroundResource(R.color.md_black_1000);
         binding.recyclerViewEnds.getAdapter().notifyDataSetChanged();
         binding.wearableDrawerView.setVisibility(View.INVISIBLE);
-        binding.time.setVisibility(View.VISIBLE);
-        binding.time.setText(DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date()));
+        binding.clock.time.setVisibility(View.VISIBLE);
+        binding.clock.time.setText(DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date()));
     }
 
     @Override
     public void onUpdateAmbient() {
         super.onUpdateAmbient();
-        binding.time.setText(DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date()));
+        binding.clock.time.setText(DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date()));
     }
 
     @Override
@@ -144,7 +144,7 @@ public class RoundActivity extends WearableActivity {
         binding.drawerLayout.setBackgroundResource(R.color.md_wear_green_dark_background);
         binding.recyclerViewEnds.getAdapter().notifyDataSetChanged();
         binding.wearableDrawerView.setVisibility(View.VISIBLE);
-        binding.time.setVisibility(View.GONE);
+        binding.clock.time.setVisibility(View.GONE);
     }
 
     private void showRoundData() {
@@ -241,8 +241,8 @@ public class RoundActivity extends WearableActivity {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            end = (TextView) itemView.findViewById(R.id.end);
-            shots = (EndView) itemView.findViewById(R.id.shoots);
+            end = itemView.findViewById(R.id.end);
+            shots = itemView.findViewById(R.id.shoots);
         }
     }
 
